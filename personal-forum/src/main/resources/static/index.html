@@ -1,0 +1,752 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,Chrome=1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="renderer" content="webkit">
+<title>个人论坛</title>
+<link rel="stylesheet" href="css/animate.css" type="text/css"
+	media="all" />
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<script src="js/jquery-2.2.4.min.js"></script>
+<!-- <script src="js/zblogphp.js"></script> -->
+<!-- <script src="js/c_html_js_add.js"></script> -->
+<script src="js/swiper.min.js"></script>
+<link href="css/style.css" type="text/css" media="all" rel="stylesheet" />
+<!-- [if lt IE 9]><script src="js/html5shiv.js"></script><![endif] -->
+<!-- <script type="text/javascript" src="js/layui.all.js"></script> -->
+</head>
+<body class="home home-index">
+	<div class="site-main">
+		<!-- 顶部 -->
+		<div class="top-bar">
+			<div class="new-header container clearfix">
+				<!-- 分类及登录注册 -->
+				<div class="top-bar-left header-nav fl" data-type="index"
+					data-infoid="index">
+					<!-- 移动端显示顶部 -->
+					<div class="m-nav-header">
+						<div class="m_nav-list">
+							<a href="javascript:;" class="lines js-m-navlist"> <i
+								class="nav-bar"><span></span><span></span><span></span></i>
+							</a>
+						</div>
+					</div>
+					<div class="m-nav-logo">
+						<a href="javascript:void(0);"> <img
+							src="picture/201908192377_939.png"> <img class="night-logo"
+							src="picture/201908192377_939.png">
+						</a>
+					</div>
+					<div class="m-nav-search">
+						<a id="m-nav-so" href="javascript:void(0);"><i
+							class="fa fa-search"></i></a> <a class="at-night"
+							href="javascript:void(0);" target="_self"><i
+							class="wb-switch"></i></a>
+						
+					</div>
+					<!-- PC端显示顶部 -->
+					<aside class="mobile_aside mobile_nav">
+						<div class="mobile-menu">
+							<nav class="top-bar-navigation">
+								<ul class="top-bar-menu nav-pills">
+									<li id="nvabar-item-index"><a href="index.html"><i
+											class="fa fa-bandcamp"></i>首页</a></li>
+									<li id="navbar-category-5"><a href="info.html"><i
+											class="fa fa-coffee"></i>畅所欲言</a></li>
+									<li id="navbar-category-1"><a href="tech.html"><i
+											class="fa fa-recycle"></i>榜上有名</a></li>
+									<li id="navbar-category-6"><a href="index.html"><i
+											class="fa fa-delicious"></i>别出心裁</a></li>
+									<li id="navbar-page-438" class="menu-item-has-children"><a
+										href="index.html"><i class="fa fa-get-pocket"></i> <span
+											id="n-new">个人中心</span> </a>
+										<ul class="dropdown-menu sub-menu">
+											<li id="navbar-page-2"><a href="published.html">发表</a></li>
+											<li id="navbar-page-384"><a href="index.html"
+												class="current-on">足迹</a></li>
+										</ul></li>
+								</ul>
+								<!-- <div id="sidebar-toggle" class="sidebar-toggle"><span></span></div> -->
+							</nav>
+						</div>
+					</aside>
+				</div>
+				<div class="top-bar-right text-right fr">
+					<div class="top-admin">
+						<div class="login">
+							<i class="fa fa-sign-in"></i><a id="yonghu">注册/登录</a>
+						</div>
+						<a class="at-night" href="javascript:switchNightMode()"
+							target="_self"><i class="wb-switch"></i></a>
+					</div>
+				</div>
+			</div>
+			<!-- logo以及搜索 -->
+			<div class="container secnav clearfix">
+				<div class="fav-subnav">
+					<div class="top-bar-left pull-left navlogo">
+						<a href="https://www.talklee.com/" class="logo box"> <img
+							src="picture/201908192377_939.png" class="logo-light"
+							id="logo-light"> <img src="picture/201908192377_939.png"
+							class="logo-dark d-none" id="logo-dark"> <b class="shan"></b>
+						</a>
+					</div>
+					<div class="search-warp clearfix">
+						<div class="search-area">
+							<input class="search-input" placeholder="搜索感兴趣的知识和文章"
+								type="text" name="q" id="search">
+						</div>
+						<button class="showhide-search" type="submit" onclick="search()">
+							<i class="fa fa-search"></i>搜索一下
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- <div id="percentageCounter"></div> -->
+		</div>
+		<!-- 中间主要信息 -->
+		<div class="site-main container clearfix">
+			<div class="row">
+				<!-- 主信息左侧内容 -->
+				<div class="main fl">
+					<div class="main-slider clearfix">
+						<div class="sp-slideshow">
+							<!-- Swiper 轮播图-->
+							<div class="swiper-container">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<a class="block-fea" href="javascript:void(0);"
+											style="background-image: url(img/thread-523231-1-1.jpg);">
+											<i class="mask"></i>
+											<div class="entyr-icon">
+												<i class="fa fa-star-o"></i>
+											</div> <header class="swiper-header">
+												<span class="swiper-title"> <span
+													class="badge arc_v2">推荐</span> 极简原木风，值得回味的民宿空间 | 柒金設計
+												</span>
+											</header>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a class="block-fea" href="javascript:void(0);"
+											style="background-image: url(img/thread-525830-1-1.jpg);">
+											<i class="mask"></i>
+											<div class="entyr-icon">
+												<i class="fa fa-star-o"></i>
+											</div> <header class="swiper-header">
+												<span class="swiper-title"> <span
+													class="badge arc_v2">推荐</span> 120年历史的“京都町屋”
+												</span>
+											</header>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a class="block-fea" href="javascript:void(0);"
+											style="background-image: url(img/thread-528503-1-1.jpg);">
+											<i class="mask"></i>
+											<div class="entyr-icon">
+												<i class="fa fa-star-o"></i>
+											</div> <header class="swiper-header">
+												<span class="swiper-title"> <span
+													class="badge arc_v2">推荐</span> 璞隐民宿-苏州画年代设计-这里的时间比较慢
+												</span>
+											</header>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a class="block-fea" href="javascript:void(0);"
+											style="background-image: url(img/thread-518924-1-1.jpg);">
+											<i class="mask"></i>
+											<div class="entyr-icon">
+												<i class="fa fa-star-o"></i>
+											</div> <header class="swiper-header">
+												<span class="swiper-title"> <span
+													class="badge arc_v2">推荐</span> 湖边花园——拥抱自然，尽享山谷间的地中海风情
+												</span>
+											</header>
+										</a>
+									</div>
+								</div>
+								<div class="swiper-pagination"></div>
+							</div>
+						</div>
+						<!-- 轮播图右侧两个小图 -->
+						<div class="small-slider">
+							<div class="small-slider-item">
+								<a href="javascript:void(0);"
+									style="background-image: url(img/thread-518802-1-1.jpg);"
+									class="small-slider-img"> <i class="mask"></i>
+									<div class="title">
+										<span class="badge arc_v2">推荐</span>安徽铜陵山居——结合传统民居特色创造自然通透的现代居住体验
+									</div>
+								</a>
+								<div class="entyr-icon">
+									<i class="fa fa-star-o"></i>
+								</div>
+							</div>
+							<div class="small-slider-item">
+								<a href="javascript:void(0);"
+									style="background-image: url(img/thread-518789-1-1.jpg);"
+									class="small-slider-img"> <i class="mask"></i>
+									<div class="title">
+										<span class="badge arc_v2">推荐</span>古色古香的民宿，时间与空间的交流 |
+										DK大可建築設計
+									</div>
+								</a>
+								<div class="entyr-icon">
+									<i class="fa fa-star-o"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--main-slider tab切换-->
+					<header class="site-header">
+						<nav class="main-navigation">
+							<ul class="menu-nav-inline">
+								<li class="menu-item active"><a data-post href="/">经典文章</a></li>
+							</ul>
+						</nav>
+					</header>
+					<div id="content" class="side-content auto-multi clearfix">
+						<div id="post-list" class="home-main index-page auto-main">
+							<!--页面主体信息-->
+							<article class="post-list blockimg auto-list wow fadeInDown"
+								class="container-lists">
+								<div class="entry-container">
+									<div class="block-image feaimg">
+										<a class="block-fea" href="javascript:void(0);"
+											style="background-image: url(img/thread-518924-1-2.jpg);"></a>
+										<div class="entyr-icon">
+											<i class="fa fa-image"></i>
+										</div>
+									</div>
+									<header class="entry-header">
+										<span class="entry-title"> <a
+											href="javascript:void(0);">湖边花园——拥抱自然，尽享山谷间的地中海风情</a>
+										</span>
+									</header>
+									<div class="entry-summary ss">
+										<p>主楼保留了当年宏伟的乡村住宅空间风貌，深深的外廊作为开放空间，在视觉上使套房显得更为宽敞，同时与自然建立起了独特的联系，给人以悠闲舒适的感觉...</p>
+									</div>
+									<div class="entry-meta fea-meta">
+										<a href="javascript:void(0);"> <img src="picture/1.png"
+											class="avatar avatar-140 photo" height="25" width="25">陌上花开
+										</a> <span class="separator">/</span>
+										<time datetime="2020-02-24">2020-02-24</time>
+										<span class="separator">/</span> <a class="meta-viewnums"
+											href="javascript:void(0);">0 评论</a> <span class="separator">/</span>
+										<span class="meta-viewnums">86 阅读</span>
+									</div>
+								</div>
+							</article>
+							<article
+								class="post-list blockimg picsrcd auto-list wow fadeInDown"
+								class="container-lists">
+								<div class="entry-container">
+									<div class="block-image feaimg">
+										<a class="block-fea" href="javascript:void(0);"
+											style="background-image: url(img/thread-519514-1-1.jpg);"></a>
+										<div class="entyr-icon">
+											<i class="fa fa-image"></i>
+										</div>
+									</div>
+									<header class="entry-header">
+										<span class="entry-title"> <a
+											href="javascript:void(0);">极简原木风，值得回味的民宿空间 | 柒金設計</a>
+										</span>
+									</header>
+									<div class="entry-summary ss">
+										<p>这里静谧，却不普通;低调，却不寻常 云溪左舍是群峰、溪谷中的心灵栖居 如同待字闺中的秀丽女子
+											等待发现美的眼睛和契合的灵魂 经行云漠漠，看溪水潺潺...</p>
+									</div>
+									<div class="entry-meta fea-meta">
+										<a href="javascript:void(0);"> <img src="picture/1.png"
+											class="avatar avatar-140 photo" height="25" width="25">陌上花开
+										</a> <span class="separator">/</span>
+										<time datetime="2020-02-24">2020-02-24</time>
+										<span class="separator">/</span> <a class="meta-viewnums"
+											href="javascript:void(0);">0 评论</a> <span class="separator">/</span>
+										<span class="meta-viewnums">67 阅读</span>
+									</div>
+								</div>
+							</article>
+							<article
+								class="post-list blockimg picsrcd auto-list wow fadeInDown"
+								class="container-lists">
+								<div class="entry-container">
+									<div class="block-image feaimg">
+										<a class="block-fea" href="javascript:void(0);"
+											style="background-image: url(img/thread-528503-1-2.jpg);"></a>
+										<div class="entyr-icon">
+											<i class="fa fa-image"></i>
+										</div>
+									</div>
+									<header class="entry-header">
+										<span class="entry-title"> <a
+											href="javascript:void(0);">HEI店莫干民宿 HEI建筑设计工作室</a>
+										</span>
+									</header>
+									<div class="entry-summary ss">
+										<p>以山为围墙，重新梳理的石步道延伸至屋顶的钢廊，围合出中间的平台和池塘，相比传统的在城市里自己叠山理水的古典园林，这是个更立体的真正开放式山水园林...</p>
+									</div>
+									<div class="entry-meta fea-meta">
+										<a href="javascript:void(0);"> <img src="picture/1.png"
+											class="avatar avatar-140 photo" height="25" width="25">陌上花开
+										</a> <span class="separator">/</span>
+										<time datetime="2020-02-24">2020-02-24</time>
+										<span class="separator">/</span> <a class="meta-viewnums"
+											href="javascript:void(0);">0 评论</a> <span class="separator">/</span>
+										<span class="meta-viewnums">67 阅读</span>
+									</div>
+								</div>
+							</article>
+							<article
+								class="post-list blockimg picsrcd auto-list wow fadeInDown"
+								class="container-lists">
+								<div class="entry-container">
+									<div class="block-image feaimg">
+										<a class="block-fea" href="javascript:void(0);"
+											style="background-image: url(img/thread-518802-1-2.jpg);"></a>
+										<div class="entyr-icon">
+											<i class="fa fa-image"></i>
+										</div>
+									</div>
+									<header class="entry-header">
+										<span class="entry-title"> <a
+											href="javascript:void(0);">安徽铜陵山居——结合传统民居特色创造自然通透的现代居住体验</a>
+										</span>
+									</header>
+									<div class="entry-summary ss">
+										<p>将残墙一分为二；中段化为庭院，夜观星河，四水归堂；檐口化为两分异质脊线，与山峦并行；而那颗高耸的残树和古老的村落，则被引入我们的铜陵山居...</p>
+									</div>
+									<div class="entry-meta fea-meta">
+										<a href="javascript:void(0);"> <img src="picture/1.png"
+											class="avatar avatar-140 photo" height="25" width="25">陌上花开
+										</a> <span class="separator">/</span>
+										<time datetime="2020-02-24">2020-02-24</time>
+										<span class="separator">/</span> <a class="meta-viewnums"
+											href="javascript:void(0);">0 评论</a> <span class="separator">/</span>
+										<span class="meta-viewnums">67 阅读</span>
+									</div>
+								</div>
+							</article>
+							<article
+								class="post-list blockimg picsrcd auto-list wow fadeInDown"
+								class="container-lists">
+								<div class="entry-container">
+									<div class="block-image feaimg">
+										<a class="block-fea" href="javascript:void(0);"
+											style="background-image: url(img/thread-518789-1-2.jpg);"></a>
+										<div class="entyr-icon">
+											<i class="fa fa-image"></i>
+										</div>
+									</div>
+									<header class="entry-header">
+										<span class="entry-title"> <a
+											href="javascript:void(0);">古色古香的民宿，时间与空间的交流 | DK大可建築設計</a>
+										</span>
+									</header>
+									<div class="entry-summary ss">
+										<p>周身被茶园环抱是一处传统雅士生活的世外桃源之地。园区内有两栋徽州民居古宅“清溪轩”、“龙吟居”...</p>
+									</div>
+									<div class="entry-meta fea-meta">
+										<a href="javascript:void(0);"> <img src="picture/1.png"
+											class="avatar avatar-140 photo" height="25" width="25">陌上花开
+										</a> <span class="separator">/</span>
+										<time datetime="2020-02-24">2020-02-24</time>
+										<span class="separator">/</span> <a class="meta-viewnums"
+											href="javascript:void(0);">0 评论</a> <span class="separator">/</span>
+										<span class="meta-viewnums">67 阅读</span>
+									</div>
+								</div>
+							</article>
+						</div>
+					</div>
+				</div>
+				<!--main fl 主信息右侧-->
+				<div class="side fr">
+					<!-- 个人信息 -->
+					<section class="widget abautor">
+						<div class="widget-list">
+							<div class="widget_avatar"
+								style="background-image: url(images/015_s.jpg);">
+								<a href="admin.html"> <img class="widget-about-image"
+									src="img/user.png" height="70" width="70" id="images">
+									<div class="widget-cover vip1"></div>
+									<i title="管理员" class="author-ident author1"></i>
+								</a>
+							</div>
+							<div class="widget-about-intro">
+								<div id="yonghu">
+									管理员<span class="autlv aut-1 vs">V</span><span
+										class="autlv aut-1">管理员</span>
+								</div>
+								<div class="widget-about-desc">
+									文章 60 篇 <i>|</i> 评论 90 次
+								</div>
+								<div class="widget-article-newest">
+									<span>最新文章</span>
+								</div>
+								<ul class="widget-about-posts" id="zuixin">
+									
+									
+									
+								</ul>
+							</div>
+						</div>
+					</section>
+					<!-- 热门文章 -->
+					<section class="widget wow fadeInDown" id="divPrevious"
+						style="visibility: visible; animation-name: fadeInDown;">
+						<h3 class="widget-title">
+							<i class="fa fa-divPrevious"></i> <span>热门文章</span>
+						</h3>
+						<ul class="widget-box divPrevious" id="remen">
+							
+							
+						</ul>
+					</section>
+					<!--最新评论 -->
+					<section class="widget wow fadeInDown" id="divComments">
+						<h3 class="widget-title">
+							<i class="fa fa-divComments"></i><span>最新评论</span>
+						</h3>
+						<section class="widget-box divComments" id="xinping">
+						
+							
+						
+							
+						</section>
+					</section>
+					<!-- 热评文章 -->
+					<section class="widget wow fadeInDown" id="side_con">
+						<h3 class="widget-title">
+							<i class="fa fa-side_con"></i><span>热评文章</span>
+						</h3>
+						<ul class="widget-box side_con" id="reping">
+							
+							
+							
+							
+							
+						</ul>
+					</section>
+				</div>
+			</div>
+			<!--row 主体信息底部-->
+			<div class="pic-list clearfix">
+				<!--图文模块 经典设计-->
+				<div class="pic-box box-shadow wow fadeInDown" data-wow-delay="0.3s">
+					<section class="two-box-tit">
+						<h3>榜上有名</h3>
+						<span class="more-i"> <a href="javascript:void(0);"><span></span><span></span><span></span></a>
+						</span>
+					</section>
+					<ul class="pic-box-list pic-box-lists">
+						<li><a href="javascript:void(0);"> <i class="thumb "
+								style="background-image: url(images/202002091581230311844127.jpg)"></i>
+								<h3>宁静致远(Quietlee)自媒体博客主题模板，夜间模式及强大的SEO效果</h3>
+								<p>
+									<b class="datetime">2020-02-09</b><span class="viewd">1450
+										人在看</span>
+								</p>
+						</a></li>
+						<li><a href="javascript:void(0);"> <i class="thumb "
+								style="background-image: url(images/202002091581230311844127.jpg)"></i>
+								<h3>宁静致远(Quietlee)自媒体博客主题模板，夜间模式及强大的SEO效果</h3>
+								<p>
+									<b class="datetime">2020-02-09</b><span class="viewd">1450
+										人在看</span>
+								</p>
+						</a></li>
+						<li><a href="javascript:void(0);"> <i class="thumb "
+								style="background-image: url(images/202002091581230311844127.jpg)"></i>
+								<h3>宁静致远(Quietlee)自媒体博客主题模板，夜间模式及强大的SEO效果</h3>
+								<p>
+									<b class="datetime">2020-02-09</b><span class="viewd">1450
+										人在看</span>
+								</p>
+						</a></li>
+						<li><a href="javascript:void(0);"> <i class="thumb "
+								style="background-image: url(images/202002091581230311844127.jpg)"></i>
+								<h3>宁静致远(Quietlee)自媒体博客主题模板，夜间模式及强大的SEO效果</h3>
+								<p>
+									<b class="datetime">2020-02-09</b><span class="viewd">1450
+										人在看</span>
+								</p>
+						</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="two-list clearfix">
+				<!--文字专栏 榜上有名-->
+				<div class="two-box box-shadow wow fadeInDown" data-wow-delay="0.3s">
+					<section class="two-box-tit">
+						<h3>畅所欲言</h3>
+						<span class="more-i"> <a href="javascript:void(0);"><span></span><span></span><span></span></a>
+						</span>
+					</section>
+					<div class="two-list-img">
+						<a class="figure-thumb" href="javascript:void(0);"> <i
+							class="thumb "
+							style="background-image: url(images/202002211582262039798127.jpg)"></i>
+						</a>
+						<ul class="two-box-list" id="chang1">
+							
+							
+						</ul>
+					</div>
+				</div>
+				<div class="two-box box-shadow wow fadeInDown" data-wow-delay="0.3s">
+					<section class="two-box-tit">
+						<h3>畅所欲言</h3>
+						<span class="more-i"> <a href="javascript:void(0);"><span></span><span></span><span></span></a>
+						</span>
+					</section>
+					<div class="two-list-img">
+						<a class="figure-thumb" href="javascript:void(0);"> <i
+							class="thumb "
+							style="background-image: url(images/202002211582262039798127.jpg)"></i>
+						</a>
+						<ul class="two-box-list" id="chang2">
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--site-main container 底部-->
+		<footer class="site-footer footer">
+			<div class="site-info clearfix">
+				<div class="container">
+					<!--底部左边-->
+					<div class="footer-l-top">
+						<a class="footer-l" href="javascript:void(0);" target="_blank"><i
+							class="fa fa-address-card fa-lg"></i>隐私保护</a> <a class="footer-l"
+							href="javascript:void(0);" target="_blank"><i
+							class="fa fa-book fa-lg"></i>免责声明</a> <a class="footer-l"
+							href="javascript:void(0);" target="_blank"><i
+							class="fa fa-pencil fa-lg"></i>文章归档</a> <a class="footer-l"
+							href="javascript:void(0);" target="_blank"><i
+							class="fa fa-user-circle fa-lg"></i>关于我们</a>
+					</div>
+				</div>
+			</div>
+			<!-- 固定右下角 回到顶部 -->
+			<div id="backtop" class="backtop">
+				<div class="bt-box top">
+					<i class="fa fa-angle-up fa-2x"></i>
+				</div>
+				<div class="bt-box bottom">
+					<i class="fa fa-angle-down fa-2x"></i>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<!-- <script src="js/custom.js"></script> -->
+	<script src="js/nprogress.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script>
+		NProgress.start();
+		setTimeout(function() {
+			NProgress.done();
+		}, 1000);
+	</script>
+	<script type="text/javascript" src="js/san_praise_sdk.js"></script>
+	<script src="js/jquery.cookie.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</body>
+<script type="text/javascript">
+$(function(){
+	//===========最新的文章==========
+	$.ajax({
+		 "url": "../article/showNewArticle.do",
+	    "type": "GET",
+	    "dataType": "json",
+	    "success": function(json) {
+	    	if(json.state==200){
+	    		json.data.forEach((val,index)=>{
+	    			var html='<li>'+
+							'<div class="widget-posts-text">'+
+								'<a class="widget-posts-title" onclick="showArticle('+val.id+')">'+
+								val.title+'</a>'+
+								'<div class="widget-posts-meta">'+
+									'<i>0 评论</i>'+
+								'</div>'+
+							'</div>'+
+						'</li>';
+						$("#zuixin").append(html);
+	    		})
+	    	}else{
+	    		$("#zuixin").append("暂无文章");
+	    	}
+	    		
+	    }
+	})
+	
+	//==========热门文章===========
+	$.ajax({
+		 "url": "../article/showHotArticle.do",
+	    "type": "GET",
+	    "dataType": "json",
+	    "success": function(json) {
+	    	if(json.state==200){
+				json.data.forEach((val,index)=>{
+				
+			    	var newTime = new Date(val.createdTime);
+					var html='<li class="clr"><a onclick="showArticle('+val.id+')"'+
+							'title="'+val.title+'">'+
+							'<div class="time">'+
+							'<span class="r">'+newTime.getDate()+'</span>/<span class="y">'+(newTime.getMonth() + 1)+'月</span>'+
+							'</div>'+
+							'<h4 class="title">'+val.title+'</h4>'+
+							'</a></li>';
+							
+					$("#remen").append(html);
+					
+	    		})
+	    		
+	    		
+	    	}else{
+	    		$("#remen").append("暂无文章");
+	    	}
+	    		
+	    }
+	})
+	
+	//===========最新评论==========
+	$.ajax({
+		 "url": "../com/showNewComment.do",
+	    "type": "GET",
+	    "dataType": "json",
+	    "success": function(json) {
+	    	if(json.state==200){
+				json.data.forEach((val,index)=>{
+					var newTime = new Date(val.createdTime);
+					var html='<div class="comment-item">'+
+									'<div class="comment-meta">'+
+								'<div class="meta-item">'+
+									'<span class="comment-avatar"> <i class="thumb"'+
+										'style="background-image: url('+val.commentAvatar+')"></i>'+
+									'</span>'+val.createdUser+' <span class="autlv aut-5">评论者</span>'+
+								'</div>'+
+								'<span class="comment-views">'+(newTime.getMonth() + 1)+'月'+newTime.getDate()+'日</span>'+
+							'</div>'+
+							'<div class="comment-content">'+
+								'<p>'+
+									'<a onclick="showArticle('+val.articleId+')">'+val.commentArticle+'</a>'+
+								'</p>'+
+							'</div>'+
+						'</div>';
+			       $("#xinping").append(html);
+	    		})
+	    		
+	    	}else{
+	    		$("#xinping").append("暂无评论");
+	    	}
+	    		
+	    }
+	})
+	
+	//===========热评文章==========
+	$.ajax({
+		 "url": "../article/showHotReviewsArticle.do",
+	    "type": "GET",
+	    "dataType": "json",
+	    "success": function(json) {
+	    	if(json.state==200){
+				json.data.forEach((val,index)=>{
+					var html='<li>'+
+							'<div class="widget-posts-text">'+
+							'<a class="widget-posts-title" onclick="showArticle('+val.id+')">'+
+							    val.title+'</a>'+
+									'<div class="widget-posts-meta">'+
+									'<i>30 评论</i>'+
+									'</div>'+
+								'</div>'+
+								'</li>';
+			       $("#reping").append(html);
+	    		})
+	    		
+	    	}else{
+	    		$("#reping").append("暂无文章");
+	    	}
+	    		
+	    }
+	})
+	
+	//===========畅所欲言1==========
+	$.ajax({
+		"url": "../search/findByArticle.do",
+        "data": "page=1",
+        "type": "GET",
+        "dataType": "json",
+        "success": function(json) {
+	    	if(json.state==200){
+	    		for(var v=0;v<4;v++){
+	    			var newTime = new Date(json.data[v].createdTime);
+					var html='<span class="two-list-date">'+(newTime.getMonth() + 1)+'/'+newTime.getDate()+'</span>'+
+						'<li class="two-list-title"><a onclick="showArticle('+json.data[v].id+')"'+
+							'rel="bookmark">'+json.data[v].abst+'</a></li>';
+					
+					
+			       $("#chang1").append(html);
+	    		}
+				
+	    		
+	    	}else{
+	    		$("#chang1").append("暂无文章");
+	    	}
+	    		
+	    }
+	})
+	
+	//===========畅所欲言2==========
+	$.ajax({
+		"url": "../search/findByArticle.do",
+        "data": "page=2",
+        "type": "GET",
+        "dataType": "json",
+        "success": function(json) {
+	    	if(json.state==200){
+	    		for(var v=0;v<4;v++){
+	    			var newTime = new Date(json.data[v].createdTime);
+					var html='<span class="two-list-date">'+(newTime.getMonth() + 1)+'/'+newTime.getDate()+'</span>'+
+						'<li class="two-list-title"><a onclick="showArticle('+json.data[v].id+')"'+
+							'rel="bookmark">'+json.data[v].abst+'</a></li>';
+			       $("#chang1").append(html);
+	    		}
+				
+	    	}else{
+	    		$("#chang2").append("暂无文章");
+	    	}
+	    		
+	    }
+	})
+	
+})
+
+</script>
+<script type="text/javascript">
+function search(){
+	var search=$("#search").val();
+	if(search==""||/^\s*$/.test(search)){
+		return;
+	}
+	console.log(search);
+	localStorage.setItem("search",search);
+	location.href="search.html";
+}
+function showArticle(id){
+	localStorage.setItem("infoId",id);
+	location.href="details.html";
+}
+</script>
+</html>

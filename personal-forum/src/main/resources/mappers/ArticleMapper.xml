@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.forum.mapper.ArticleMapper">
+
+	<!-- 增加发布信息 -->
+	<insert id="addArticle"
+		parameterType="com.forum.entity.Article"
+		useGeneratedKeys="true"
+		keyProperty="id">
+		INSERT INTO article (
+			uid,title,label,abst,content,permissions,
+			created_user, created_time,
+			modified_user, modified_time
+		) VALUES (
+			#{uid}, #{title},
+			#{label},#{abst},#{content},#{permissions},
+			#{createdUser}, #{createdTime},
+			#{modifiedUser}, #{modifiedTime}
+		)
+	</insert>
+	
+	<!-- 根据标签查找发布的信息-->
+	<select id="getArticleByLabel"
+		resultType="com.forum.entity.Article">
+		SELECT 
+			id,uid,title,label,abst,content,permissions
+			
+		FROM 
+			article
+		WHERE 
+			label like "%"#{label}"%"
+	</select>
+	
+	<!-- 根据id查找内容-->
+	<select id="getArticleById"
+		resultType="com.forum.entity.Article">
+		SELECT 
+			id,uid,title,label,abst,content,permissions
+		FROM 
+			article
+		WHERE 
+			id=#{id}
+	</select>
+	
+	<!-- 根据uid查找发布的信息-->
+	<select id="getArticleByUid"
+		resultType="com.forum.entity.Article">
+		SELECT 
+			id,uid,title,label,abst,content,permissions
+		FROM 
+			article
+		WHERE 
+			uid=#{uid}
+	</select>
+	
+	<!-- 修改内容 -->
+	<update id="upArticle" parameterType="com.forum.entity.Article">
+		UPDATE 
+			article
+		SET
+			title=#{title},
+			label=#{label},
+			abst=#{abst},
+			content=#{content},
+			permissions=#{permissions},
+			modified_user=#{modifiedUser},
+			modified_time=now()
+		WHERE 
+			id=#{id}
+			AND
+			uid=#{uid}
+	</update>
+	
+	
+	<!-- 根据id删除指定内容 -->
+	<delete id="delArticle">
+		DELETE FROM
+			article
+		WHERE
+			id=#{id}
+			AND
+			uid=#{uid}
+	</delete>
+		
+    <!-- 最新的文章 -->		
+	<select id="showNewArticle"
+		resultType="com.forum.entity.Article">
+		SELECT 
+			id,title
+		FROM 
+			article
+		WHERE 
+			uid=#{uid}
+		ORDER BY 
+		    created_time desc
+		LIMIT
+			0,3
+	</select>
+	
+	<!-- 热门文章 -->
+	<select id="showHotArticle"
+		resultType="com.forum.entity.Article">
+		SELECT 
+			id,title,created_time AS createdTime
+		FROM 
+			article
+		ORDER BY 
+		    created_time desc
+		LIMIT
+			0,3
+	</select>
+	
+	<!-- 热评文章 -->
+	<select id="showHotReviewsArticle"
+		resultType="com.forum.entity.Article">
+		SELECT 
+			id,title
+		FROM 
+			article,(SELECT article_id AS articleId
+					FROM
+					`comment`
+					GROUP BY articleId
+					ORDER BY COUNT(article_id) DESC
+					LIMIT 0,5) as hot
+		WHERE
+  			 id=hot.articleId
+	</select>
+</mapper>
+
+
+
+
+

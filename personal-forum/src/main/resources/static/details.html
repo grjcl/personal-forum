@@ -1,0 +1,813 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,Chrome=1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="renderer" content="webkit">
+<title>个人论坛-正文</title>
+<link rel="stylesheet" href="css/animate.css" type="text/css"
+	media="all" />
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<script src="js/jquery-2.2.4.min.js"></script>
+<!-- <script src="js/zblogphp.js"></script>
+  <script src="js/c_html_js_add.js"></script> -->
+<script src="js/swiper.min.js"></script>
+<link href="css/style.css" type="text/css" media="all" rel="stylesheet" />
+<script src="js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+<!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+</head>
+<style>
+.guestBook-messages-header {
+	font-size: 16px;
+	padding: 20px 0 6px;
+	margin: 6px 50px;
+	border-bottom: 1px solid #ccc;
+}
+
+.guestBook-messages-line {
+	padding-bottom: 9px;
+	border-bottom: 3px solid #58a5c3;
+}
+
+.guestBook-main-flag {
+	width: 82%;
+	height: auto;
+	margin: auto;
+	background: #fff;
+}
+
+.guestBook-messages {
+	padding: 20px 50px;
+}
+
+.guestBook-content {
+	width: 100%;
+	height: auto;
+	margin: auto;
+	resize: none;
+}
+
+.guestBook-announces {
+	width: 72px;
+	height: 28px;
+	line-height: 28px;
+	font-size: 14px;
+	color: #fff;
+	margin: 20px 50px;
+	border: 1px solid #58a5c3;
+	border-radius: 2px;
+	background: #58a5c3;
+}
+
+.guestBook-main-empty {
+	width: 50%;
+	color: #333;
+	font-size: 18px;
+	font-weight: bolder;
+	text-align: center;
+	padding: 20px 30px 10px;
+	margin: auto;
+}
+
+.guestBook-main-tits {
+	border-bottom: 1px solid #ccc;
+}
+
+.guestBook-main-tit {
+	font-size: 14px;
+	color: #333;
+	padding: 10px;
+}
+
+.guestBook-cons-list {
+	border-bottom: 1px solid #ccc;
+}
+
+.guestBook-con-list {
+	padding: 15px 15px 5px;
+}
+
+.guestBook-con-author {
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+	border-radius: 50%;
+}
+
+.guestBook-con-rig {
+	width: 90%;
+}
+
+.small-cons {
+	width: 93%;
+}
+
+.guestBook-con-user {
+	color: #26709A;
+	margin-bottom: 5px;
+}
+
+.guestBook-con-time, .small-con {
+	color: #9c9c9c;
+	margin-left: 25px;
+}
+
+.small-con {
+	word-break: break-all;
+}
+
+.guestBook-con-txt {
+	height: auto;
+	padding-bottom: 10px;
+	word-break: break-all;
+}
+
+.guestBook-con-operate {
+	padding: 5px;
+}
+
+.guestBook-con-reply, .guestBook-con-del, .small-del {
+	color: #26709a;
+	padding-right: 20px;
+	cursor: pointer;
+}
+
+.guestBook-con-reply:hover, .guestBook-con-del:hover, .small-del:hover {
+	text-decoration: underline;
+}
+
+.samll-lists {
+	padding: 10px 0;
+}
+
+.small-author {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+.small-cons-list {
+	padding: 5px 30px 10px 0;
+	border-top: 1px solid #ccc;
+}
+
+.small-reply {
+	margin-top: 10px;
+}
+
+.small-content {
+	width: 50%;
+	padding: 5px 10px;
+}
+
+.small-affirm {
+	color: #FFFFFF;
+	padding: 5px 8px;
+	border: 1px solid #6D7C8C;
+	background-color: #7B8C9E;
+}
+
+.content-mian-all {
+	width: 82%;
+	margin: auto;
+	padding: 30px 50px;
+	background: #fff;
+	box-shadow: 20px -6px 21px -22px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+}
+</style>
+<body class="home home-article">
+	<div class="site-main">
+		<!-- 顶部 -->
+		<div class="top-bar">
+			<div class="new-header container clearfix">
+				<!-- 分类及登录注册 -->
+				<div class="top-bar-left header-nav fl" data-type="article"
+					data-infoid="1">
+					<!-- 移动端显示顶部 -->
+					<div class="m-nav-header">
+						<div class="m_nav-list">
+							<a href="javascript:;" class="lines js-m-navlist"> <i
+								class="nav-bar"><span></span><span></span><span></span></i>
+							</a>
+						</div>
+					</div>
+					<div class="m-nav-logo">
+						<a href="javascript:void(0);"> <img
+							src="picture/201908192377_939.png"> <img class="night-logo"
+							src="picture/201908192377_939.png">
+						</a>
+					</div>
+					<div class="m-nav-search">
+						<a id="m-nav-so" href="javascript:void(0);"><i
+							class="fa fa-search"></i></a> <a class="at-night"
+							href="javascript:void(0);" target="_self"><i
+							class="wb-switch"></i></a>
+						
+					</div>
+					<!-- PC端显示顶部 -->
+					<aside class="mobile_aside mobile_nav">
+						<div class="mobile-menu">
+							<nav class="top-bar-navigation">
+								<ul class="top-bar-menu nav-pills">
+									<li id="nvabar-item-index"><a href="index.html"><i
+											class="fa fa-bandcamp"></i>首页</a></li>
+									<li id="navbar-category-5"><a href="info.html"><i
+											class="fa fa-coffee"></i>畅所欲言</a></li>
+									<li id="navbar-category-1"><a href="tech.html"><i
+											class="fa fa-recycle"></i>榜上有名</a></li>
+									<li id="navbar-category-6"><a href="index.html"><i
+											class="fa fa-delicious"></i>别出心裁</a></li>
+									<li id="navbar-page-438" class="menu-item-has-children"><a
+										href="index.html"><i class="fa fa-get-pocket"></i> <span
+											id="n-new">个人中心</span> </a>
+										<ul class="dropdown-menu sub-menu">
+											<li id="navbar-page-2"><a href="published.html">发表</a></li>
+											<li id="navbar-page-384"><a href="index.html"
+												class="current-on">足迹</a></li>
+										</ul></li>
+								</ul>
+								<!-- <div id="sidebar-toggle" class="sidebar-toggle"><span></span></div> -->
+							</nav>
+						</div>
+					</aside>
+				</div>
+				<div class="top-bar-right text-right fr">
+					<div class="top-admin">
+						<div class="login">
+							<i class="fa fa-sign-in"></i><a id="yonghu">注册/登录</a>
+						</div>
+						<a class="at-night" href="javascript:switchNightMode()"
+							target="_self"><i class="wb-switch"></i></a>
+					</div>
+				</div>
+			</div>
+			<!-- logo以及搜索 -->
+			<div class="container secnav clearfix">
+				<div class="fav-subnav">
+					<div class="top-bar-left pull-left navlogo">
+						<a href="https://www.talklee.com/" class="logo box"> <img
+							src="picture/201908192377_939.png" class="logo-light"
+							id="logo-light"> <img src="picture/201908192377_939.png"
+							class="logo-dark d-none" id="logo-dark"> <b class="shan"></b>
+						</a>
+					</div>
+					<div class="search-warp clearfix">
+						<div class="search-area">
+							<input class="search-input" placeholder="搜索感兴趣的知识和文章"
+								type="text" name="q" id="search">
+						</div>
+						<button class="showhide-search" type="submit" onclick="search()">
+							<i class="fa fa-search"></i>搜索一下
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- <div id="percentageCounter"></div> -->
+		</div>
+		<!-- 中间主要内容 -->
+		<div class="article-wrap container">
+			<main id="main" class="site-main article-main">
+			<div class="row">
+				<section class="content-mian-all">
+					<article class="post single-post">
+						<header class="entry-header page-header">
+							<div class="place clearfix">
+								<nav class="nat_tit">正文</nav>
+								<span class="fr"><i class="fa fa-home"></i><a
+									href="https://www.talklee.com/">首页</a><i
+									class="fa fa-angle-right"></i><a
+									href="javascript:;" title="查看 新鲜科技 分类中的全部文章">新鲜科技</a>
+								</span>
+							</div>
+							<h1 class="entry-title page-title" id="title"></h1>
+							<div class="contimg">
+								<a href="javascript:;"><img
+									src="picture/1.png" class="avatar" height="35" width="35"></a>
+							</div>
+							<div class="entry-meta contpost-meta">
+								<a href="javascript:;" id="createdUser">
+									<span class="autlv lay-4 aut-1 vs">V</span><span
+									class="autlv lay-4 aut-1">管理员</span>
+								</a><span class="separator">/</span>
+								<time datetime="2020-02-21" id="year"></time>
+								<span class="separator">/</span> <a href="javascript:;" id="num"></a>
+							</div>
+							<div class="postArticle-meta">
+								<time>
+									<span class="month" id="month"></span><span class="day"
+										id="day"></span>
+								</time>
+							</div>
+							<div class="border-theme"></div>
+						</header>
+						<div class="ads single-ad"></div>
+						<div class="show_text">
+							<div class="entry-content clearfix" id="content"></div>
+						</div>
+
+						<footer class="entry-footer">
+							<div class="post-tags">
+								
+							</div>
+							<div class="readlist">
+								<div class="read_outer san-praise-sdk" sfa='click'
+									data-value="1" data-ok='zijiqugemingzi'>
+									<div class="z-thumbs-up" title="赞一个" id="dainzan">
+										<i class="fa fa-heart"></i>赞（<span class="san-praise-sdk"
+											data-value='1' id="praise">5</span>）
+									</div>
+								</div>
+								<div class="read_outer">
+									<div class="read" title="收藏" id="shuocang">
+										<i class="fa fa-send"></i> 收藏（<span class="san-praise"
+											data-value='2' id="coll">3</span>）
+									</div>
+								</div>
+							</div>
+						</footer>
+					</article>
+
+
+					<section id="comments">
+						<!--评论框-->
+						<div class="guestBook-main-flag">
+							<h1 class="guestBook-messages-header">
+								<span class="guestBook-messages-line"> <i
+									class="fa fa-paste"></i> <span>留言板</span>
+								</span>
+							</h1>
+							<div class="guestBook-messages">
+								<div class="guestBook-message">
+									<textarea name="" id="" cols="30" rows="10"
+										placeholder="请输入留言内容！" class="guestBook-content"></textarea>
+									<div class="clearfix">
+										<button class="guestBook-announces fr">发表</button>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<!--评论框结束-->
+						<div class="commentlist">
+							<div class="comment-tab">
+								<div class="come-comt">评论列表</div>
+							</div>
+							<label id="AjaxCommentBegin"></label>
+
+
+							<div class="shadow-box msg noimg wow fadeInRight"
+								data-wow-delay="0.25s" id="pinglun"></div>
+
+
+
+							<div class="guestBook-main-cons">
+								<div class="guestBook-main-con">
+									<ul class="guestBook-cons-lists">
+										<!-- 评论列表开始 -->
+										<!-- 评论列表结束 -->
+									</ul>
+								</div>
+							</div>
+
+							<!--评论输出结束-->
+							<!--评论翻页条输出-->
+							<div class="pagination wow fadeInDown">
+								<ul>
+								</ul>
+							</div>
+							<label id="AjaxCommentEnd"></label>
+							<!--评论翻页条输出结束-->
+
+						</div>
+						<span class="icon icon_comment" title="comment"></span>
+					</section>
+				</section>
+			</div>
+			</main>
+		</div>
+
+		<footer class="site-footer footer">
+			<div class="site-info clearfix">
+				<div class="container">
+					<div class="footer-l-top">
+						<a class="footer-l" href="javascript:void(0);" target="_blank"><i
+							class="fa fa-address-card fa-lg"></i>隐私保护</a> <a class="footer-l"
+							href="javascript:void(0);" target="_blank"><i
+							class="fa fa-book fa-lg"></i>免责声明</a> <a class="footer-l"
+							href="javascript:void(0);" target="_blank"><i
+							class="fa fa-pencil fa-lg"></i>文章归档</a> <a class="footer-l"
+							href="javascript:void(0);" target="_blank"><i
+							class="fa fa-user-circle fa-lg"></i>关于我们</a>
+					</div>
+				</div>
+			</div>
+			<!-- 固定右下角 回到顶部 -->
+			<div id="backtop" class="backtop">
+				<div class="bt-box top">
+					<i class="fa fa-angle-up fa-2x"></i>
+				</div>
+				<div class="bt-box bottom">
+					<i class="fa fa-angle-down fa-2x"></i>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<div class="none">
+		<!-- <script src="js/custom.js"></script> -->
+		<script src="js/html2canvas.min.js"></script>
+		<script src="js/common.js"></script>
+
+
+	</div>
+	<div class="none">
+		<!-- <script src="js/custom.js"></script> -->
+		<script src="js/nprogress.js"></script>
+		<script src="js/wow.min.js"></script>
+	</div>
+
+	<!-- <script src="js/san_praise_sdk.js"></script>
+<script src="js/clipboard.min.js"></script><script src="js/copycode.js"></script></body>
+  <script src="js/nprogress.js"></script><script src="js/wow.min.js"></script> -->
+	<script>
+  NProgress.start();
+  setTimeout(function() { NProgress.done(); }, 1000);
+  </script>
+
+	<script type="text/javascript">
+$(function(){
+	
+	 var myDate = new Date();
+     var nowtime = myDate.toLocaleString( );        //获取日期与时间
+   //===============================================
+     if($(".guestBook-main-num").text()==0) {
+         $(".guestBook-main-empty").show()
+     }else {
+         $(".guestBook-main-empty").hide()
+     }
+     
+     
+     
+   
+     
+     //===============================================
+     $(".guestBook-content").val("")
+         var contlen = $(".guestBook-cons-list").length  //留言条数
+         $(".guestBook-main-num").text(contlen)
+         if($(".guestBook-main-num").text()==0) {
+             $(".guestBook-main-empty").show()
+         }else {
+             $(".guestBook-main-empty").hide()
+         }
+
+        
+    //======================================================
+	
+	var infoId = localStorage.getItem("infoId");
+	if(infoId==null){
+		alert("数据错误");
+		location.href = "info.html";
+	}
+	
+	//console.log("id=="+infoId);
+	$.ajax({
+		 "url": "../search/findById.do",
+	    "data": "id="+infoId,
+	    "type": "GET",
+	    "dataType": "json",
+	    "success": function(json) {
+	    	if(json.state==200){
+	    		var data=json.data;
+		    	var newTime = new Date(data.createdTime);
+		    	
+		    	//布置文本数据进行显示
+		   	 //console.log("文章数据=="+json.data);
+		   	   $("#title").html(data.title);
+		   	   $("#createdUser").html(data.createdUser);
+		   	   console.log(newTime.getFullYear() + "-" + (newTime.getMonth() + 1) + "-" + newTime.getDate());
+			   	$("#year").html(newTime.getFullYear());
+			   	$("#month").html(newTime.getMonth() + 1);
+			   	$("#day").html(newTime.getDate());
+			   	$("#content").html(data.content);
+			   	$("#num").html(data.num+" 评论");
+			   	//console.log("评论=="+data.com);
+			   	
+			    data.com.forEach((val,index)=>{
+			    	var muban="";
+			    	var id=val.id;
+			    	var uid=val.uid;
+			    	var articleId=val.articleId;
+			    	var commentArticle=val.commentArticle;
+			    	var commentAvatar=val.commentAvatar;
+			    	var createdUser=val.createdUser;
+			    	var createdTime=val.createdTime;
+		    		var newTime = new Date(createdTime);
+		    		
+		    		
+						
+						
+							
+			    	var muban1='<li class="guestBook-cons-list">'+
+						'<div class="guestBook-con-list clearfix">'+
+		                '<img src="'+commentAvatar+'" alt="" class="guestBook-con-author fl">'+
+		                '<div class="guestBook-con-rig fr">'+
+		                '<p class="guestBook-con-user">'+createdUser+
+		                '<span class="guestBook-con-time">'+newTime.getFullYear() + 
+		                "-" + (newTime.getMonth() + 1) + "-" + newTime.getDate()+'</span></p>'+    
+	                    '<p class="guestBook-con-txt">'+commentArticle+'</p> '+
+	                    '<div class="guestBook-con-operate">'+
+	               		 '<span class="guestBook-con-reply" onclick="reply('+id+','+infoId+')">回复</span>'+
+	               		'<!--<span class="guestBook-con-del" onclick="del('+id+','+infoId+')">删除</span>-->'+
+	         			 '<div class="samll-lists clearfix"><div class="small-cons-list">';
+						
+					
+			    	muban+=muban1;
+			    	//追加评论
+			    	val.addcomments.forEach((vals,index)=>{
+			    		//console.log("追加=="+vals);
+			    		var ids=vals.id;
+				    	var uids=vals.uid;
+				    	var articleIds=vals.articleId;
+				    	var commentArticles=vals.commentArticle;
+				    	var commentAvatars=vals.commentAvatar;
+				    	var createdUsers=vals.createdUser;
+				    	var createdTimes=vals.createdTime;
+			    		var newTimes = new Date(createdTime);
+			    		var muban3= '<div class="samll-lists clearfix">'+
+		                    '<img src="'+commentAvatars+'" alt="" class="small-author fl">'+
+	                       ' <div class="small-cons fr"><p class="small-user">'+commentArticles+'<span class="small-con"></span></p>'+
+	                       ' <div class="small-list">'+
+	                       '<span class="samll-time">'+newTimes.getFullYear() + "-" + (newTimes.getMonth() + 1) + "-" + newTimes.getDate()+'</span> '+
+	                       '<!--<span class="small-del" onclick="reply('+ids+','+infoId+'")>删除</span>--></div></div></div>';
+						//console.log("模板3=="+muban3);
+						muban+=muban3;
+			    		
+			    	})
+			    	
+			    	
+			    	var muban4= '</div>'+
+					      '</div>'+
+					     '</div>'+
+					    '</div>'+
+					  '</div>'+
+					'</li>';
+				    muban+=muban4;
+				    $(".guestBook-cons-lists").prepend(muban);
+			    })
+			    
+	    	}else{
+	    		alert("数据错误");
+	    		location.href = "info.html";
+	    	}
+	    	
+			
+	   	    
+	   	 
+	    }
+	})
+	
+	//=====================获取留言内容==========================
+     $(".guestBook-announces").click(function() {
+         var content = $(".guestBook-content").val()
+        // console.log("长度=="+content.length);
+         if(content.length==0){
+        	 alert("请输入内容");
+        	 return;
+         }
+         if(content.length>60){
+        	 alert("评论内容过长");
+        	 return;
+         }
+         //从cookie中获取用户头像
+         var headPortrait = $.cookie("headPortrait");
+         if(headPortrait==null){
+     		headPortrait="img/user.png";
+     		
+     	}
+         
+         var data = {
+        	 articleId : infoId,
+        	 commentArticle : content,
+        	 commentAvatar : headPortrait
+         }
+         //发送ajax请求
+          $.ajax({
+              "url": "../com/addCom.do",
+              "data": data,
+              "type": "POST",
+              "dataType": "json",
+              "success" :function(json){
+            	  if(json.state==200){
+            		  $(".guestBook-cons-lists").prepend(`
+            		             <li class="guestBook-cons-list">
+            		                 <div class="guestBook-con-list clearfix">
+            		                     <img src="${headPortrait}" alt="" class="guestBook-con-author fl">
+            		                     <div class="guestBook-con-rig fr">
+            		                         <p class="guestBook-con-user">fdsg<span class="guestBook-con-time">${nowtime}</span></p>    
+            		                         <p class="guestBook-con-txt">${content}</p>
+            		                         <div class="guestBook-con-operate">
+            		                             <span class="guestBook-con-reply">回复</span>
+            		                             <!--<span class="guestBook-con-del">删除</span>-->
+            		                         </div>
+            		                     </div>
+            		                 </div>
+            		             </li> 
+            		         `)
+            		         
+            	  }else{
+            		  alert("评论失败");
+            	  }
+              }
+          });
+        
+     })
+	
+	//====================获取收藏数和点赞数===========================
+	
+	$.ajax({
+		 "url": "../coll/countCollection.do",
+	    "data": "articleId="+infoId,
+	    "type": "GET",
+	    "dataType": "json",
+	    "success": function(data) {
+		   	$("#coll").html(data);
+	    }
+	})
+	
+	$.ajax({
+		 "url": "../praise/countPraise.do",
+	    "data": "articleId="+infoId,
+	    "type": "GET",
+	    "dataType": "json",
+	    "success": function(data) {
+		   	$("#praise").html(data);
+	    }
+	})
+	
+	//=======================点击收藏和点赞========================
+	
+	$("#shuocang").click(function(){
+		
+		var data = {
+		        articleId : infoId
+           };
+		$.ajax({
+			 "url": "../coll/ToDealWithCollection.do",
+		    "data": data,
+		    "type": "POST",
+		    "dataType": "json",
+		    "success": function(data) {
+		    	if(data!=null){
+		    		$("#coll").html(data);
+		    	}
+			   	
+		    }
+		})
+	})
+	$("#dainzan").click(function(){
+		
+	var data = {
+	        articleId : infoId
+	          };
+		$.ajax({
+			 "url": "../praise/ToDealWithPraise.do",
+		    "data": data,
+		    "type": "POST",
+		    "dataType": "json",
+		    "success": function(data) {
+		    	if(data!=null){
+		    		$("#praise").html(data);
+		    	}
+			   	
+		    }
+		})
+	})
+		
+
+	
+	
+	
+})
+
+function del(id,articleId){
+	console.log(addComments);
+	console.log(articleId);
+	$(".guestBook-con-del").click(function(){        //删除留言
+        $(this).parent().parent().parent().parent().remove()
+        var contlen = $(".guestBook-cons-list").length  //留言条数
+        $(".guestBook-main-num").text(contlen)
+        if($(".guestBook-main-num").text()==0) {
+            $(".guestBook-main-empty").show()
+        }else {
+            $(".guestBook-main-empty").hide()
+        }
+    })
+}
+
+//===================回复留言==========================
+//addComments   被回复的留言ID
+//articleId   文章ID
+function reply(addComments,articleId){
+	$(".guestBook-con-reply").click(function(){     //
+		
+	    $(this).parent().after(`
+	      
+	            <div class="small-reply"> 
+	                <input type="text" name="" id="" placeholder="我也说一句..." class="small-content">
+	                <button class="small-affirm">确认</button>
+	            </div> 
+	       
+	    `) 
+	    $(this).remove();
+	    $(".small-affirm").click(function(){      //对回复的留言进行操作
+	    	
+	        var samllcon = $(".small-content").val();
+	         if(samllcon.length==0){
+	        	 //alert("请输入内容");
+	        	 return;
+	         }
+	         if(samllcon.length>60){
+	        	 alert("评论内容过长");
+	        	 return;
+	         }
+	         //从cookie中获取用户头像
+	         var headPortrait = $.cookie("headPortrait");
+	         if(headPortrait==null){
+	     		headPortrait="img/user.png";
+	     		
+	     	}
+	         
+	         var data = {
+	        	 articleId : articleId,
+	        	 addComments : addComments,
+	        	 commentArticle : samllcon,
+	        	 commentAvatar : headPortrait
+	         }
+	        // console.log("data=="+samllcon);
+	         //错误，发送两次请求
+	         if(samllcon!=""){
+	        	 //发送ajax请求
+		          $.ajax({
+		              "url": "../com/addCom.do",
+		              "data": data,
+		              "type": "POST",
+		              "dataType": "json",
+		              "success" :function(json){
+		            	  if(json.state==200){
+		            		  var myDate = new Date();
+		            		  var nowtime = myDate.toLocaleString( );  
+		            		  $(".small-affirm").parent().before(`
+		            		            <div class="samll-lists clearfix">
+		            		                <img src="${headPortrait}" alt="" class="small-author fl">
+		            		                <div class="small-cons fr">
+		            		                    <p class="small-user">fsds<span class="small-con">${samllcon}</span></p>
+		            		                    <div class="small-list">
+		            		                        <span class="samll-time">${nowtime}</span>
+		            		                        <!--<span class="small-del">删除</span>-->
+		            		                    </div>
+		            		                </div>
+		            		            </div>
+		            		        `)
+		            		         
+		            	  }else{
+		            		  alert("评论失败");
+		            	  }
+		              }
+		          });
+	         }
+	        
+	        $(".small-content").val("")
+	        $(".small-del").click(function(){
+	            $(this).parent().parent().parent().remove()
+	        })
+	    })
+	})
+	
+	
+	
+	
+	
+	
+}
+
+
+</script>
+<script type="text/javascript">
+function search(){
+	var search=$("#search").val();
+	if(search==""||/^\s*$/.test(search)){
+		return;
+	}
+	console.log(search);
+	localStorage.setItem("search",search);
+	location.href="search.html";
+}
+
+</script>
+
+</body>
+</html>

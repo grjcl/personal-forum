@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.forum.mapper.CommentMapper">
+
+	<insert id="addComment"
+		parameterType="com.forum.entity.Comment"
+		useGeneratedKeys="true"
+		keyProperty="id">
+		INSERT INTO comment (
+			uid,article_id,add_comments,comment_article,comment_avatar,
+			created_user, created_time,
+			modified_user, modified_time
+		) VALUES (
+			#{uid},#{articleId},#{addComments},#{commentArticle},#{commentAvatar},
+			#{createdUser}, #{createdTime},
+			#{modifiedUser}, #{modifiedTime}
+		)
+	</insert>
+	
+	<delete id="delComment">
+		DELETE FROM
+			comment
+		WHERE
+		    id=#{id}
+		    AND
+			uid=#{uid}
+			AND
+			article_id=#{articleId}
+	</delete>
+	
+	<select id="selComment" resultType="com.forum.entity.Comment">
+		SELECT
+			id,uid,article_id AS articleId,
+		   comment_article AS commentArticle,
+		   comment_avatar AS commentAvatar,
+			created_user AS createdUser, 
+			created_time AS  createdTime
+		 FROM
+			comment
+		WHERE
+			article_id=#{id}
+			AND
+			add_comments=0
+		ORDER BY
+		    created_time asc
+	</select>
+	
+	<!-- 显示最新评论 -->
+	<select id="showNewComment" resultType="com.forum.entity.Comment">
+			SELECT 
+			   article_id AS articleId,
+			   comment_article AS commentArticle,
+		  	   comment_avatar AS commentAvatar,
+			   created_user AS createdUser, 
+			   created_time AS  createdTime
+			FROM
+			   comment
+			ORDER BY created_time DESC
+			LIMIT 0,3
+	</select>
+	
+	<select id="selAddComment" resultType="com.forum.entity.Comment">
+		SELECT
+		  id,uid,article_id AS articleId,
+		   comment_article AS commentArticle,
+		   comment_avatar AS commentAvatar,
+			created_user AS createdUser, 
+			created_time AS  createdTime
+		 FROM
+			comment
+		WHERE
+			add_comments=#{addComments}
+		ORDER BY
+		    created_time asc
+	</select>
+		
+</mapper>

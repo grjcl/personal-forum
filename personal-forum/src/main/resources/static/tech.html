@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,Chrome=1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="renderer" content="webkit">
+<title>个人论坛-榜上有名</title>
+<link rel="stylesheet" href="css/animate.css" type="text/css"
+	media="all" />
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<link href="css/style.css" type="text/css" media="all" rel="stylesheet" />
+<script src="js/jquery.cookie.js" type="text/javascript"
+		charset="utf-8"></script>
+<!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+</head>
+<style>
+.guestBook-messages-header {
+	font-size: 16px;
+	padding: 6px 0;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #ccc;
+}
+
+.guestBook-messages-line {
+	padding-bottom: 9px;
+	border-bottom: 3px solid #58a5c3;
+}
+</style>
+<body class="home home-category">
+	<div class="site-main">
+		<!-- 顶部 -->
+		<div class="top-bar">
+			<div class="new-header container clearfix">
+				<!-- 分类及登录注册 -->
+				<div class="top-bar-left header-nav fl" data-type="category"
+					data-infoid="1">
+					<!-- 移动端显示顶部 -->
+					<div class="m-nav-header">
+						<div class="m_nav-list">
+							<a href="javascript:;" class="lines js-m-navlist"> <i
+								class="nav-bar"><span></span><span></span><span></span></i>
+							</a>
+						</div>
+					</div>
+					<div class="m-nav-logo">
+						<a href="javascript:void(0);"> <img
+							src="picture/201908192377_939.png"> <img class="night-logo"
+							src="picture/201908192377_939.png">
+						</a>
+					</div>
+					<div class="m-nav-search">
+						<a id="m-nav-so" href="javascript:void(0);"><i
+							class="fa fa-search"></i></a> <a class="at-night"
+							href="javascript:void(0);" target="_self"><i
+							class="wb-switch"></i></a>
+						
+					</div>
+					<!-- PC端显示顶部 -->
+					<aside class="mobile_aside mobile_nav">
+						<div class="mobile-menu">
+							<nav class="top-bar-navigation">
+								<ul class="top-bar-menu nav-pills">
+									<li id="nvabar-item-index"><a href="index.html"><i
+											class="fa fa-bandcamp"></i>首页</a></li>
+									<li id="navbar-category-5"><a href="info.html"><i
+											class="fa fa-coffee"></i>畅所欲言</a></li>
+									<li id="navbar-category-1"><a href="tech.html"><i
+											class="fa fa-recycle"></i>榜上有名</a></li>
+									<li id="navbar-category-6"><a href="index.html"><i
+											class="fa fa-delicious"></i>别出心裁</a></li>
+									<li id="navbar-page-438" class="menu-item-has-children"><a
+										href="index.html"><i class="fa fa-get-pocket"></i> <span
+											id="n-new">个人中心</span> </a>
+										<ul class="dropdown-menu sub-menu">
+											<li id="navbar-page-2"><a href="published.html">发表</a></li>
+											<li id="navbar-page-384"><a href="index.html"
+												class="current-on">足迹</a></li>
+										</ul></li>
+								</ul>
+								<!-- <div id="sidebar-toggle" class="sidebar-toggle"><span></span></div> -->
+							</nav>
+						</div>
+					</aside>
+				</div>
+				<div class="top-bar-right text-right fr">
+					<div class="top-admin">
+						<div class="login">
+							<i class="fa fa-sign-in"></i><a id="yonghu">注册/登录</a>
+						</div>
+						<a class="at-night" href="javascript:switchNightMode()"
+							target="_self"><i class="wb-switch"></i></a>
+					</div>
+				</div>
+			</div>
+			<!-- logo以及搜索 -->
+			<div class="container secnav clearfix">
+				<div class="fav-subnav">
+					<div class="top-bar-left pull-left navlogo">
+						<a href="https://www.talklee.com/" class="logo box"> <img
+							src="picture/201908192377_939.png" class="logo-light"
+							id="logo-light"> <img src="picture/201908192377_939.png"
+							class="logo-dark d-none" id="logo-dark"> <b class="shan"></b>
+						</a>
+					</div>
+					<div class="search-warp clearfix">
+						<div class="search-area">
+							<input class="search-input" placeholder="搜索感兴趣的知识和文章"
+								type="text" name="q" id="search">
+						</div>
+						<button class="showhide-search" type="submit" onclick="search()">
+							<i class="fa fa-search"></i>搜索一下
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- <div id="percentageCounter"></div> -->
+		</div>
+		<!-- 中间主要信息 -->
+		<div class="category-wrap container">
+			<main id="main" class="site-main">
+			<div class="row">
+				<div class="main cataimg-main auto-mar">
+					<h1 class="guestBook-messages-header">
+						<span class="guestBook-messages-line"> <i
+							class="fa fa-paste"></i> <span>榜上有名</span>
+						</span>
+					</h1>
+					<ul class="home-main imglist pic-box-list auto-main">
+						<!--页面主体信息-->
+						<li class="auto-list wow fadeInDown" class="con-lists"><a
+							href="javascript:void(0);"> <i class="thumb "
+								style="background-image: url(images/202002211582262039798127.jpg)"></i>
+								<h3>CSS垂直居中的8种方法，附详细的图文教程</h3>
+								<p>
+									<b class="datetime">2020-02-21</b><span class="viewd">203
+										人在看</span>
+								</p>
+						</a></li>
+						<li class="auto-list wow fadeInDown" class="con-lists"><a
+							href="javascript:void(0);"> <i class="thumb "
+								style="background-image: url(images/202002131581592557461510.png)"></i>
+								<h3>转载：又拍云CDN与云存储如何设置开启跨域</h3>
+								<p>
+									<b class="datetime">2020-02-13</b><span class="viewd">402
+										人在看</span>
+								</p>
+						</a></li>
+						<li class="auto-list wow fadeInDown" class="con-lists"><a
+							href="javascript:void(0);"> <i class="thumb "
+								style="background-image: url(images/202002101581301437318207.png)"></i>
+								<h3>主题模板一键生成海报功能没有图片的详细教程</h3>
+								<p>
+									<b class="datetime">2020-02-10</b><span class="viewd">571
+										人在看</span>
+								</p>
+						</a></li>
+						<li class="auto-list wow fadeInDown" class="con-lists"><a
+							href="javascript:void(0);"> <i class="thumb "
+								style="background-image: url(images/202001201579509061906486.png)"></i>
+								<h3>
+									<span class="badge arc_v3">推荐</span>zblog博客主题模板的飘雪特效图文教程
+								</h3>
+								<p>
+									<b class="datetime">2020-01-20</b><span class="viewd">752
+										人在看</span>
+								</p>
+						</a></li>
+						<li class="auto-list wow fadeInDown" class="con-lists"><a
+							href="javascript:void(0);"> <i class="thumb "
+								style="background-image: url(images/202001191579425510547279.jpg)"></i>
+								<h3>
+									<span class="badge arc_v3">推荐</span>头条搜索站长平台提交站点验证失败的解决办法
+								</h3>
+								<p>
+									<b class="datetime">2020-01-19</b><span class="viewd">682
+										人在看</span>
+								</p>
+						</a></li>
+						<li class="auto-list wow fadeInDown" class="con-lists"><a
+							href="javascript:void(0);"> <i class="thumb "
+								style="background-image: url(images/201912231577080787542798.jpg)"></i>
+								<h3>
+									<span class="badge arc_v4">热文</span>zblog开启SEO插件之后网站标题都没了，怎么办
+								</h3>
+								<p>
+									<b class="datetime">2019-12-23</b><span class="viewd">1006
+										人在看</span>
+								</p>
+						</a></li>
+						<li class="auto-list wow fadeInDown" class="con-lists"><a
+							href="javascript:void(0);"> <i class="thumb "
+								style="background-image: url(images/201912221576981584473183.png)"></i>
+								<h3>
+									<span class="badge arc_v3">推荐</span>zblog安装图文教程，附zblog主题下载及使用教程
+								</h3>
+								<p>
+									<b class="datetime">2019-12-22</b><span class="viewd">1518
+										人在看</span>
+								</p>
+						</a></li>
+						<li class="auto-list wow fadeInDown" class="con-lists"><a
+							href="javascript:void(0);"> <i class="thumb "
+								style="background-image: url(images/201912221576981584473183.png)"></i>
+								<h3>
+									<span class="badge arc_v3">推荐</span>zblog安装图文教程，附zblog主题下载及使用教程
+								</h3>
+								<p>
+									<b class="datetime">2019-12-22</b><span class="viewd">1518
+										人在看</span>
+								</p>
+						</a></li>
+						<li class="auto-list wow fadeInDown" class="con-lists"><a
+							href="javascript:void(0);"> <i class="thumb "
+								style="background-image: url(images/201912171576571718206657.jpg)"></i>
+								<h3>
+									<span class="badge arc_v3">推荐</span>阿里云虚拟机怎么更换PHP版本，需要注意什么？
+								</h3>
+								<p>
+									<b class="datetime">2019-12-17</b><span class="viewd">1036
+										人在看</span>
+								</p>
+						</a></li>
+					</ul>
+				</div>
+			</div>
+			</main>
+		</div>
+		<footer class="site-footer footer">
+			<div class="site-info clearfix">
+				<div class="container">
+					<div class="footer-l-top">
+						<a class="footer-l" href="javascript:void(0);" target="_blank"><i
+							class="fa fa-address-card fa-lg"></i>隐私保护</a> <a class="footer-l"
+							href="javascript:void(0);" target="_blank"><i
+							class="fa fa-book fa-lg"></i>免责声明</a> <a class="footer-l"
+							href="javascript:void(0);" target="_blank"><i
+							class="fa fa-pencil fa-lg"></i>文章归档</a> <a class="footer-l"
+							href="javascript:void(0);" target="_blank"><i
+							class="fa fa-user-circle fa-lg"></i>关于我们</a>
+					</div>
+				</div>
+			</div>
+			<!-- 固定右下角 回到顶部 -->
+			<div id="backtop" class="backtop">
+				<div class="bt-box top">
+					<i class="fa fa-angle-up fa-2x"></i>
+				</div>
+				<div class="bt-box bottom">
+					<i class="fa fa-angle-down fa-2x"></i>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<div class="none">
+		<!-- <script src="js/custom.js"></script> -->
+		<script src="js/nprogress.js"></script>
+		<script src="js/wow.min.js"></script>
+		<script>
+			NProgress.start();
+			setTimeout(function() {
+				NProgress.done();
+			}, 1000);
+		</script>
+		<script type="text/javascript">
+function search(){
+	var search=$("#search").val();
+	if(search==""||/^\s*$/.test(search)){
+		return;
+	}
+	console.log(search);
+	localStorage.setItem("search",search);
+	location.href="search.html";
+}
+
+</script>
+	</div>
+</body>
+</html>
