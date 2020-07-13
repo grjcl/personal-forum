@@ -8,10 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.forum.mapper")
 public class PersonalForumApplication {
 
-	/**
-	 * qidonglei
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		SpringApplication.run(PersonalForumApplication.class, args);
 		
