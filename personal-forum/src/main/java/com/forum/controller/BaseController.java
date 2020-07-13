@@ -26,7 +26,7 @@ import com.forum.service.exception.UserNotFoundException;
 public abstract class BaseController {
 	
 	/**
-	 * 正确响应时的代号
+	 * 正确响应时的代号456456
 	 */
 	public static final Integer SUCCESS = 200;
 
